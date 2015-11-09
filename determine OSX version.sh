@@ -1,7 +1,10 @@
-##determine OS version
-		OSVer=$( sw_vers -productVersion )
-		CasperLog "Current OS: $OSVer"
+#!/bin/bash
 
+GetOSVersion()
+{
+	##determine OS version
+		OSVer=$( sw_vers -productVersion )
+		
 		## Set appropriate installer flag based on OS version.
 		## Handles packages that may have an old cert
 		## TODO: rewrite as a case statement for the 3 nanoseconds performance improvement
@@ -14,3 +17,9 @@
 		elif [[ $OSVer =~ "10.10" ]]; then
 			allowFlag="-allowUntrusted"    
 		fi
+		
+}
+
+GetOSVersion
+
+exit 0
