@@ -1,7 +1,5 @@
 #!/bin/bash
 
-GetOSVersion()
-{
 	##determine OS version
 		OSVer=$( sw_vers -productVersion )
 		
@@ -18,8 +16,4 @@ GetOSVersion()
 			allowFlag="-allowUntrusted"    
 		fi
 		
-}
 
-GetOSVersion
-
-exit 0
